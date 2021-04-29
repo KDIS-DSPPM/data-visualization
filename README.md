@@ -1,11 +1,5 @@
-# Introduction to Computational Text Analysis
+# Introduction to Data Visualization 
 
 * Instructor: [Jae Yeon Kim](https://jaeyk.github.io/)
 
-This advanced course introduces students to computational text analysis. Text is everywhere, from open-ended questions in surveys to newspaper articles, to social media posts. Recent developments in natural language processing and machine learning allow us to collect and analyze text data faster, easier, and at scale. This course will teach you about these tools and techniques and their promises and limitations in social science applications. In addition, we will explore how we can be more creative about taking the text-as-data approach by treating the computational text analysis as one component of a larger research project. 
-
-The course is divided into four sections:
-* We will learn the promises and limitations of the text-as-data approach.
-* We will learn how to collect a large volume of text data using web scraping and application programming interfaces.
-* We will learn how to analyze text data using natural language processing and machine learning.
-* We will learn how to combine the text-as-data approach with other means of collecting and analyzing qualitative and quantitative data. 
+This advanced course introduces students to data visualization. Data doesn't speak for itself, so you need to analyze it and make the findings accessible by presenting them with effective visualization. In this course, we first focus on why some data visualization work and others don't. Second, we learn how to visualize data in an efficient and reproducible way using data science tools and techniques. Third, we practice plotting raw data, descriptive, and model summaries using static, animated, and interactive plots. Finally, we explore other forms of data visualization such as networks and maps.

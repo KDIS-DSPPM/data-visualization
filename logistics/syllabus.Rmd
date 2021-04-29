@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Computational Text Analysis"
+title: "Introduction to Data Visualization"
 author: "Jae Yeon Kim"
 date: "Updated: `r Sys.Date()`"
 output:
@@ -8,28 +8,19 @@ output:
 
 # Overview
 
-This advanced course introduces students to computational text analysis. Text is everywhere, from open-ended questions in surveys to newspaper articles to social media posts. Recent developments in natural language processing and machine learning allow us to collect and analyze text data faster, easier, and at scale. This course will teach you about these tools and techniques and their promises and limitations in social science applications. In addition, we will explore how we can be more creative about taking the text-as-data approach by treating the computational text analysis as one component of a larger research project. 
-
-The course is divided into four sections:
-
-- We will learn the promises and limitations of the text-as-data approach.
-- We will learn how to collect a large volume of text data using web scraping and application programming interfaces.
-- We will learn how to analyze text data using natural language processing and machine learning.
-- We will learn how to combine the text-as-data approach with other means of collecting and analyzing qualitative and quantitative data. 
+This advanced course introduces students to data visualization. Data doesn't speak for itself, so you need to analyze it and make the findings accessible by presenting them with effective visualization. In this course, we first focus on why some data visualization work and others don't. Second, we learn how to visualize data in an efficient and reproducible way using data science tools and techniques. Third, we practice plotting raw data, descriptive, and model summaries using static, animated, and interactive plots. Finally, we explore other forms of data visualization such as networks and maps.
 
 ## Objectives 
 
-By the end of the semester, students will create a data science project using computational text analysis. They will learn what aspects of research questions they can or can't answer using computational text analysis.
+By the end of the semester, students will create a data science project using data visualization. 
 
-- Students will *describe* what the text-as-data approach is and its limitations and promises. 
+- Students will *describe* the process of tidying, visualizing, and communicating data.
 
-- Students will *understand* the essential data science workflow applied to computational text analysis.  
+- Students will *understand* the criteria by which one can judge whether a particular form of data visualization works or doesn't work.  
 
-- Students will *practice* collecting text data using web scraping and an application programming interface. 
+- Students will *practice* visualizing descriptive and model summaries.
 
-- Students will *practice* analyzing text data using natural language processing and machine learning.
-
-- Students will *create* a data science project using computational text analysis.
+- Students will *create* a data science project using data visualization.
 
 ## Logistics 
 
@@ -47,7 +38,7 @@ Office hours will be held ...
 
 - [Slack](https://slack.com/) for communication (announcements and questions). It would be best if you asked questions about class material and assignments through the Slack channels so that everyone can benefit from the discussion. I encourage you to respond to each other’s questions as well.  
 
-- [GitHub](https://github.com/) for course materials. All course materials will be posted on GitHub at https://github.com/KDIS-DSPPM/comp-text-analysis, including lecture notes, code demonstrations, sample data, and assignments. 
+- [GitHub](https://github.com/) for course materials. All course materials will be posted on GitHub at https://github.com/KDIS-DSPPM/data-visualization, including lecture notes, code demonstrations, sample data, and assignments. 
 
 ### Accessibility
 
@@ -71,7 +62,7 @@ Students will form a team of 3-5 people. Note that all of the following activiti
 
 I will assign you to teams based on the responses to the survey, which I will circulate at the beginning of the semester. The assignment will be based on an algorithm that optimizes diversity among team members.
 
-Students must complete two take-home assignments, one focusing on digital data collection (due week 4) and the other focusing on computational text analysis (due week 8). You are also required to submit a one-page research proposal by week 5. Once approved by the instructor, you will present the key aspects of your final project in the form of a lightning talk by weeks 8-10. After incorporating the feedback received from the instructor and other students, you will hand in the final project by week 12.
+Students must complete two take-home assignments, one focusing on visualizing descriptive summaries (due week 5) and the other focusing on visualizing model outcomes (due week 8). You are also required to submit a one-page research proposal by week 6. Once approved by the instructor, you will present the key aspects of your final project in the form of a lightning talk by weeks 8-10. After incorporating the feedback received from the instructor and other students, you will hand in the final project by week 12.
 
 This is a graded class based on the following:
 
@@ -99,15 +90,15 @@ The class participation portion of the grade can be satisfied in one or more of 
 
 #### Assignments 
 
-1. Digital data collection assignment (due **week 4**)
+1. Visualizing descriptive statistics (due **week 5**)
 
-2. Computational text analysis assignment (due **week 8**)
+2. Visualizing model outcomes (due **week 8**)
 
 #### Research proposals and final projects
 
-1. Short research proposal (due **week 5**): You will submit a one-page description of your final project. For more information, see [this guideline](https://github.com/KDIS-DSPPM/comp-text-analysis/blob/main/proposal.md). I will provide a template for the final project soon.
+1. Short research proposal (due **week 6**): You will submit a one-page description of your final project. For more information, see [this guideline](https://github.com/KDIS-DSPPM/data-visualization/blob/main/proposal.md). I will provide a template for the final project soon.
 
-2. Lightning talk (elevator pitch) (due **weeks 8-10**): You will present your project in a maximum of 5-minute talk, with 5 minutes for class Q&A. When you prepare slides, think about spending one minute for each slide. For more information, see [this guideline](https://github.com/KDIS-DSPPM/comp-text-analysis/blob/main/slides.md).
+2. Lightning talk (elevator pitch) (due **weeks 8-10**): You will present your project in a maximum of 5-minute talk, with 5 minutes for class Q&A. When you prepare slides, think about spending one minute for each slide. For more information, see [this guideline](https://github.com/KDIS-DSPPM/data-visualization/blob/main/slides.md).
 
 3. Final project (due **week 12**): You will submit the final project applying the framework, tools, and techniques we learned in class to your problem of interest.
 
@@ -123,7 +114,7 @@ This course is hands-on (meaning you need to type and run things using a program
 
 All of the required software is **free** and should be installed in the first week of the class.
 
-See [install.md](https://github.com/KDIS-DSPPM/comp-text-analysis/blob/main/install.md) for more information. 
+See [install.md](https://github.com/KDIS-DSPPM/data-visualization/blob/main/install.md) for more information. 
 
 ## Course schedule
 
@@ -136,16 +127,16 @@ pacman::p_load(glue,
 
 ```{r echo=FALSE, results="asis"}
 weeks <- c(1:12)
-descs <- c("Text-as-Data: Promises and Limitations", 
-           "Parsing Semi-Structured Data at Scale",
-           "Web Scraping",
-           "Application Programming Interface",
-           "Couting Texts at Scale",
-           "Modeling Texts Using Algorithms",
-           "When We Know Labels: Text Classification",
-           "When We Don't Know Labels: Topic Modeling",
-           "Text Networks and Word Embeddings",
-           "How to Combine Text and Other Data Analysis",
+descs <- c("Good Visualization: Informative, Accessible, and Beautiful", 
+           "Tidying and Wrangling: Preppaing Data for Visualization",
+           "The Grammar of Data Visualization",
+           "Comparing Groups",
+           "Tracking Trends",
+           "Summarizing Models",
+           "Polishing Graphs",
+           "Making Plots Animated",
+           "Making Plots Interactive",
+           "Networks and Maps",
            "Reading Week",
            "Final Project Due")
 glue("* Week {weeks}: {descs} \\ \\")
@@ -153,8 +144,8 @@ glue("* Week {weeks}: {descs} \\ \\")
 
 ## Questions, comments, or suggestions
 
-Please create [issues](https://github.com/KDIS-DSPPM/comp-text-analysis/issues) if you have questions, comments, or suggestions.
+Please create [issues](https://github.com/KDIS-DSPPM/data-visualization/issues) if you have questions, comments, or suggestions.
 
 ## Acknolwedgement 
 
-The course structure is influenced by Chris Bail's [Text as Data](https://cbail.github.io/textasdata/) course. I have also cited all the other references in the course materials whenever I am aware of related books, articles, slides, blog posts, or YouTube video clips.
+The course structure is influenced by Kieran Healy's [Data Visualization](http://socviz880.co/) course. I have also cited all the other references in the course materials whenever I am aware of related books, articles, slides, blog posts, or YouTube video clips.
