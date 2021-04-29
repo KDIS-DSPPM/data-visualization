@@ -1,4 +1,4 @@
-# Introduction to Data Visualization 
+# Data Visualization 
 
 * Instructor: [Jae Yeon Kim](https://jaeyk.github.io/)
 
