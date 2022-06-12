@@ -100,7 +100,7 @@ The class participation portion of the grade can be satisfied in one or more of 
 
 ### 3. Final exam
 
-The final exam is a take-home exam that I expect you to work on your work. The exam requires applying the skills you’ve acquired throughout the course to the real world data wrangling challenge. We will provide a link where you can retrieve the final exam and data. You should provide your student ID in the process and complete the exam within 24 hours. Like the assignments, you should turn in both the HTML output and R markdown file so that we could reproduce your analysis. This format is very similar to the technical interview required for getting data science jobs, so it should be useful for your career. I will take three things in consideration for the evaluation: reproducibility, efficiency, and readability. 
+The final exam is a take-home exam that I expect you to work on your work. The exam requires applying the skills you’ve acquired throughout the course to the real world data visualization challenge. We will provide a link where you can retrieve the final exam and data. You should provide your student ID in the process and complete the exam within 24 hours. Like the assignments, you should turn in both the HTML output and R markdown file so that we could reproduce your analysis. This format is very similar to the technical interview required for getting data science jobs, so it should be useful for your career.
 
 ## Accessibility
 
