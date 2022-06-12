@@ -30,7 +30,7 @@ Instructor: Dr. Jae Yeon Kim, Assistant Professor, KDI School of Public Policy a
 
 ## Office Hours
 
-**Friday 13:00-17:00** (KST)
+**Friday 14:00-16:00** (KST)
 
 You can set up a 30 minutes appointment with me via [this Calendly link](https://calendly.com/jkim-46). The appointments are booked on a rolling basis.
 
