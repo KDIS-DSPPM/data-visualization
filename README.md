@@ -89,7 +89,7 @@ This is a graded class based on the following:
 
 ### 1. Assignment
 
-Two assignments will be assigned throughout the semester. The assignments provide frequent learning opportunities. Each of these assignments should be fairly short and expected to be finished within 8-10 hours of effort. You are encouraged to work in group, but the work you turn in must be your own. Unless otherwise notified, the assignments should be rendered into an HTML output using R markdown (*.rmd) and you should submit both of them via the EKDIS website. In addition, the R markdown files should be reproducible on our end, in the event we want to reproduce your work. I will cover what R markdown is and how to create an HTML output in the second week of the course. The final exam uses the same output format. 
+Two assignments (one writing and one programming) will be assigned throughout the semester. The assignments provide frequent learning opportunities. Each of these assignments should be fairly short and expected to be finished within 8-10 hours of effort. You are encouraged to work in group, but the work you turn in must be your own. Unless otherwise notified, the assignments should be rendered into an HTML output using R markdown (*.rmd) and you should submit both of them via the EKDIS website. In addition, the R markdown files should be reproducible on our end, in the event we want to reproduce your work. I will cover what R markdown is and how to create an HTML output in the second week of the course. The final exam uses the same output format. 
 
 ### 2. Participation
 
@@ -126,7 +126,7 @@ This class is committed to creating an environment in which everyone can partici
   - lecture notes
   - [Healy ch.3](https://socviz.co/makeplot.html#makeplot)
   - Nolan and Stoudt (2020). [Reading to Write](https://www.stat.berkeley.edu/~nolan/Papers/SIGN_Nolan_Stoudt_2020_ReadingToWrite.pdf). *STATSCOMM*
-* Assignment #1 due  
+* Assignment #1 due (writing)
 
 ### 3rd Week 
 
@@ -146,7 +146,7 @@ This class is committed to creating an environment in which everyone can partici
   - [Healy ch.6](https://socviz.co/modeling.html#modeling)
   - Vincent Arel-Bundock (2022), ["modelsummary,"](https://vincentarelbundock.github.io/modelsummary/) R package 
   - Coppock (2020), ["Visualize as You Randomize: Design-based Statistical Graphs for Randomized Experiments"](https://alexandercoppock.com/coppock_2020.pdf)  
-* Assignment #2 due
+* Assignment #2 due (programming)
 
 ### 5th Week 
 
@@ -158,7 +158,7 @@ This class is committed to creating an environment in which everyone can partici
 
 ### 6th Week 
 
-* Final exam (a 24 hour take-home exam)
+* Final exam (a 24 hour take-home exam): A combination of writing and programming
 
 ## Contact
 
