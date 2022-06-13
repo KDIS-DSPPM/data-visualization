@@ -63,6 +63,8 @@ I use the GitHub course repository in place of readings: https://github.com/KDIS
 I am currently working on an open-access textbook titled "Computational Thinking for Social Scientists." The book covers command-line tools, version control, data wrangling, visualization, functional programming, data product development, machine learning, and SQL. If you are interested in learning computational methods further, I recommend reading it. The course is a condensed version of the textbook's data visualization section. The book’s link is provided below.
 Jae Yeon Kim (2022). Computational Thinking for Social Scientists: https://jaeyk.github.io/comp_thinking_social_science/
 
+The other book I recommend is [Communicating with Data: The Art of Writing for Data Science](https://global.oup.com/academic/product/communicating-with-data-9780198862758?cc=kr&lang=en&) (Oxford University Press 2021) by Nolan and Stoudt.
+
 ## Computer requirements
 
 The software needed for the course is as follows:
