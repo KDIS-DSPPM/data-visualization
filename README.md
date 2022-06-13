@@ -83,13 +83,15 @@ This is a graded class based on the following:
 
 - Completion of assigned homework (50%)
 
-- Participation (25%)
+- Participation (20%)
 
-- Final exam (25%)
+- Final exam (30%)
 
 ### 1. Assignment
 
 Two assignments (one writing and one programming) will be assigned throughout the semester. The assignments provide frequent learning opportunities. Each of these assignments should be fairly short and expected to be finished within 8-10 hours of effort. You are encouraged to work in group, but the work you turn in must be your own. Unless otherwise notified, the assignments should be rendered into an HTML output using R markdown (*.rmd) and you should submit both of them via the EKDIS website. In addition, the R markdown files should be reproducible on our end, in the event we want to reproduce your work. I will cover what R markdown is and how to create an HTML output in the second week of the course. The final exam uses the same output format. 
+
+These assignments will be graded on a check (70), check-plus (100), check-minus standards (50).
 
 ### 2. Participation
 
@@ -101,6 +103,8 @@ The class participation portion of the grade can be satisfied in one or more of 
 ### 3. Final exam
 
 The final exam is a take-home exam that I expect you to work on your work. The exam requires applying the skills you’ve acquired throughout the course to the real world data visualization challenge. We will provide a link where you can retrieve the final exam and data. You should provide your student ID in the process and complete the exam within 24 hours. Like the assignments, you should turn in both the HTML output and R markdown file so that we could reproduce your analysis. This format is very similar to the technical interview required for getting data science jobs, so it should be useful for your career.
+
+The final exam will be graded point-by-point. Each section and subsection will have specific assigned points.
 
 ## Accessibility
 

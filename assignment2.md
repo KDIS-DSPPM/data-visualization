@@ -1,0 +1,23 @@
+# Assignment 1 
+
+## Task 
+
+1. Read this article: https://www.ft.com/content/a2901ce8-5eb7-4633-b89c-cbdf5b386938 I recommend reading the article multiple times following [the three-step framework](https://www.stat.berkeley.edu/~nolan/Papers/SIGN_Nolan_Stoudt_2020_ReadingToWrite.pdf) proposed by Nolan and Stoudt. 
+
+2. Describe the plots used in the article. 
+
+2.1. *Organization*: Describe the organization of plots and information. [point: 10]
+
+2.2. *Information*: Identify statistical elements in the plots. [point: 20]
+
+2.3. *Argument*: Do you think the presentation of the information in these plots is effective? [point:20] Why or why not? [point: 20]
+
+2.4. *Discussion*: Propose an alternative way to visualize the same information and make a similar argument. Explain why your approach is better than the one used in the article on what grounds. [point: 30]
+
+## Grading 
+
+* Check - (0-50 points) 
+
+* Check (51-70 points) 
+
+* Check + (71-100 points)
