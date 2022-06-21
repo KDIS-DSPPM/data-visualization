@@ -129,8 +129,7 @@ This class is committed to creating an environment in which everyone can partici
   - Franconeri et al (2021). [The Science of Visual Data Communication: What Works](https://doi.org/10.1177/15291006211051956). *Psychological Science in the Public Interest* 
   - Borkin et al (2013). ["What Makes a Visualization Memorable?"](https://vcg.seas.harvard.edu/publications/what-makes-a-visualization-memorable/paper), *IEEE Computer Society*
   - kennedy elliott (2016). [39 studies about human perception in 30 minutes](https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73). *medium*
-  - Christopher G. Healy. [Perception in Visualization](https://www.csc2.ncsu.edu/faculty/healey/PP/index.html) 
-
+  
 ### 2nd Week
 
 * Intro to the tidyverse and learning the grammar of graphics using ggplot2 
