@@ -110,7 +110,7 @@ The class participation portion of the grade can be satisfied in one or more of 
 
 ### 3. Final exam
 
-The final exam is a take-home exam that I expect you to work on your work. The exam requires applying the skills you’ve acquired throughout the course to the real world data visualization challenge. We will provide a link where you can retrieve the final exam and data. You should provide your student ID in the process and complete the exam within 24 hours. Like the assignments, you should turn in both the HTML output and R markdown file so that we could reproduce your analysis. This format is very similar to the technical interview required for getting data science jobs, so it should be useful for your career.
+The final exam is a take-home exam that I expect you to work on your work. The exam requires applying the skills you’ve acquired throughout the course to the real world data visualization challenge. We will provide a link where you can retrieve the final exam and data. You should provide your student ID in the process and complete the exam within 48 hours. Like the assignments, you should turn in both the HTML output and R markdown file so that we could reproduce your analysis. This format is very similar to the technical interview required for getting data science jobs, so it should be useful for your career.
 
 The final exam will be graded point-by-point. Each section and subsection will have specific assigned points.
 
@@ -169,7 +169,7 @@ This class is committed to creating an environment in which everyone can partici
 
 ### 6th Week 
 
-* Final exam (a 24 hour take-home exam): A combination of writing and programming
+* Final exam (a 48 hour take-home exam): A combination of writing and programming
 
 ## Contact
 
