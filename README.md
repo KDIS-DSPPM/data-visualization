@@ -16,6 +16,10 @@ Why R? R is free, easy to learn (thanks to [tidyverse](https://www.tidyverse.org
 * Lecture Room: 205
 * Zoom link: Check out the EKDI site.
 
+## Teaching philosophy 
+
+No fun, no gain (not no pain, no gain). However, taking a challenge is part of being fun. The course intends to get you out of your comfort zone. So, please expect that you need to think and work hard. Simultaneously, we aim to provide you with the best possible safe space and guided assistance. So, please help us help you. When implementing these ideas, I emphasize both framework (theory) and workflow (practice). 
+
 ## Teaching crew 
 
 <img src="https://jaeyk.github.io/profile.jpg" style="margin-right:8px;" align="left" width="150">
@@ -129,15 +133,13 @@ This class is committed to creating an environment in which everyone can partici
   - Franconeri et al (2021). [The Science of Visual Data Communication: What Works](https://doi.org/10.1177/15291006211051956). *Psychological Science in the Public Interest* 
   - Borkin et al (2013). ["What Makes a Visualization Memorable?"](https://vcg.seas.harvard.edu/publications/what-makes-a-visualization-memorable/paper), *IEEE Computer Society*
   - kennedy elliott (2016). [39 studies about human perception in 30 minutes](https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73). *medium*
-  - Christopher G. Healy. [Perception in Visualization](https://www.csc2.ncsu.edu/faculty/healey/PP/index.html) 
-
+  - Nolan and Stoudt (2020). [Reading to Write](https://www.stat.berkeley.edu/~nolan/Papers/SIGN_Nolan_Stoudt_2020_ReadingToWrite.pdf). *STATSCOMM*
 ### 2nd Week
 
 * Intro to the tidyverse and learning the grammar of graphics using ggplot2 
 * Reading: 
   - lecture notes
   - [Healy ch.3](https://socviz.co/makeplot.html#makeplot)
-  - Nolan and Stoudt (2020). [Reading to Write](https://www.stat.berkeley.edu/~nolan/Papers/SIGN_Nolan_Stoudt_2020_ReadingToWrite.pdf). *STATSCOMM*
 * Assignment #1 due (writing)
 
 ### 3rd Week 
