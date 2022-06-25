@@ -10,14 +10,14 @@
 
 2.2. *Information*: Identify statistical elements in the plots. [point: 20]
 
-2.3. *Argument*: Do you think that the presentation of the information in these plots are effective? [point:20] Why or why not? [point: 20]
+2.3. *Argument*: Do you think that the presentation of the information in these plots are effective? Why or why not? [point: 40]
 
 2.4. *Discussion*: Propose an alternative way to visualize the same information and make a similar argument. Explain why your approach could be better than the one presented in the article on what grounds. [point: 30]
 
 ## Grading 
 
-* Check - (0-50 points) 
+* Check - (0-50 points: 50 points)
 
-* Check (51-70 points) 
+* Check (51-70 points: 70 points) 
 
-* Check + (71-100 points)
+* Check + (71-100 points: 100 points)

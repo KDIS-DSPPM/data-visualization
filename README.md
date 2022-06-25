@@ -133,7 +133,7 @@ This class is committed to creating an environment in which everyone can partici
   - Franconeri et al (2021). [The Science of Visual Data Communication: What Works](https://doi.org/10.1177/15291006211051956). *Psychological Science in the Public Interest* 
   - Borkin et al (2013). ["What Makes a Visualization Memorable?"](https://vcg.seas.harvard.edu/publications/what-makes-a-visualization-memorable/paper), *IEEE Computer Society*
   - kennedy elliott (2016). [39 studies about human perception in 30 minutes](https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73). *medium*
-  - Nolan and Stoudt (2020). [Reading to Write](https://www.stat.berkeley.edu/~nolan/Papers/SIGN_Nolan_Stoudt_2020_ReadingToWrite.pdf). *STATSCOMM*
+  - Nolan and Stoudt (2020). [Reading to Write](https://www.stat.berkeley.edu/~nolan/Papers/SIGN_Nolan_Stoudt_2020_ReadingToWrite.pdf). *Significance*
   
 ### 2nd Week
 
