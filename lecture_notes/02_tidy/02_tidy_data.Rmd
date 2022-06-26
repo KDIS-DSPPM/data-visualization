@@ -28,6 +28,12 @@ pacman::p_load(
 )
 ```
 
+## Base R approach 
+
+```{r}
+plot(gapminder$year, gapminder$lifeExp)
+```
+
 ## Tidyverse
 
 ### The Big Picture
@@ -194,6 +200,23 @@ p + geom_point() +
 
 p + geom_point() + 
   geom_smooth(method = "lm")
+
+# Bar plot
+
+gapminder %>%
+  group_by(continent) %>%
+  summarize(avg_life_exp = mean(lifeExp)) %>%
+  ggplot(aes(x = fct_reorder(continent, avg_life_exp), y = avg_life_exp)) +
+  geom_col() +
+  coord_flip()
+
+# Line plot 
+
+gapminder %>%
+  group_by(year) %>%
+  summarize(avg_life_exp = mean(lifeExp)) %>%
+  ggplot(aes(x = year, y = avg_life_exp)) +
+  geom_line()
 ```
 
 #### Advanced aes (size, color)
