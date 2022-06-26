@@ -152,6 +152,7 @@ This class is committed to creating an environment in which everyone can partici
   - [Healy ch.5](https://socviz.co/workgeoms.html#workgeoms)
   - Blumenthal et al (2021). [Why Do We Plot Data?](https://hdsr.mitpress.mit.edu/pub/49opxv6v/release/1). *Harvard Data Science Review*
   - Healy and Moody (2014). [Data Visualization in Sociology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4203684/). *Annual Review of Sociology*
+  - Berman, R., & Israeli, A. (2022). [The Value of Descriptive Analytics: Evidence from Online Retailers](https://pubsonline.informs.org/doi/10.1287/mksc.2022.1352). *Marketing Science*
 
 ### 4th Week 
 
