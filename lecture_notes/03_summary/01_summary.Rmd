@@ -1,0 +1,295 @@
+
+# Tidy data and the grammar of graphics
+
+## Objectives 
+
+- Learning the `facet_()` function and its usage
+- Practicing creating some group-by-summary plots using `ggplot2`
+
+## Setup
+
+- Check your `dplyr` package is up-to-date by typing `packageVersion("dplyr")`. If the current installed version is less than 1.0, then update by typing `update.packages("dplyr")`. You may need to restart R to make it work.
+
+```{r}
+ifelse(packageVersion("dplyr") >= 1,
+  "The installed version of dplyr package is greater than or equal to 1.0.0", update.packages("dplyr")
+)
+
+if (!require("pacman")) install.packages("pacman")
+
+pacman::p_load(
+  tidyverse, # the tidyverse framework
+  here, # computational reproducibility
+  gapminder, # toy data
+  ggthemes, # additional themes
+  ggrepel, # arranging ggplots
+  patchwork, # arranging ggplots
+  broom # tidying model outputs
+)
+```
+
+### Many plots 
+
+Basic ideas:
+
+- Grouping: tell `ggplot2` about the structure of your data 
+- Facetting: break up your data into pieces for a plot 
+
+#### Grouping
+
+- Can you guess what's wrong?
+
+```{r}
+
+p <- ggplot(gapminder, aes(x = year, y = gdpPercap))
+
+p + geom_point()
+
+p + geom_line()
+```
+
+`geom_line` joins up all the lines for each particular year in the order they appear in the dataset. `ggplot2` does not know the yearly observations in your data are grouped by country. 
+
+You need grouping when the grouping information you need to tell is not built into the mapped variables (like continent).
+
+```{r}
+gapminder
+```
+
+#### Facetting 
+
+Facetting is to make small multiples. 
+
+- `facet_wrap`: based on a single categorical variable like `facet_wrap(~single_categorical_variable)`. Your panels will be laid out in order and then wrapped into a grid.
+
+- `facet_grid`: when you want to cross-classify some data by two categorical variables like `facet_grid(one_cat_variable ~ two_cat_variable)`. 
+
+```{r}
+p <- ggplot(gapminder, aes(x = year, y = gdpPercap))
+
+p + geom_line(aes(group = country)) # group by, # The outlier is Kuwait.
+
+p + geom_line(aes(group = country)) + facet_wrap(~continent) # facetting
+
+p + geom_line(aes(group = country), color = "gray70") +
+  geom_smooth(size = 1.1, method = "loess", se = FALSE) +
+  scale_y_log10(labels = scales::dollar) +
+  facet_wrap(~continent, ncol = 5) + # for single categorical variable; for multiple categorical variables use facet_grid()
+  labs(
+    x = "Year",
+    y = "GDP per capita",
+    title = "GDP per capita on Five continents"
+  ) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+```{r}
+p + geom_line(aes(group = country), color = "gray70") +
+  geom_smooth(size = 1.1, method = "loess", se = FALSE) +
+  scale_y_log10(labels = scales::dollar) +
+  facet_grid(~continent) + # for single categorical variable; for multiple categorical variables use facet_grid()
+  labs(
+    x = "Year",
+    y = "GDP per capita",
+    title = "GDP per capita on Five continents"
+  ) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+
+### Transforming
+
+- Transforming: perform some calculations on or summarize your data before producing the plot 
+
+#### Use pipes to summarize data
+
+Also, we experiment with bar charts here. By default, `geom_bar` [uses](https://www.rdocumentation.org/packages/ggplot2/versions/1.0.1/topics/geom_bar) stat = "bins", which makes the height of each bar equal to the number of cases in each group. If you have a y column, then you should use `stat = "identity"` argument. Alternatively, you can use `geom_col().`
+
+```{r}
+
+gapminder_formatted <- gapminder %>%
+  group_by(continent, year) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  )
+
+ggplot(data = gapminder_formatted, aes(x = year, y = lifeExp_mean, color = continent)) +
+  geom_point() +
+  labs(
+    x = "Year",
+    y = "Life expectancy",
+    title = "Life expectancy on Five continents"
+  )
+
+gapminder %>%
+  dplyr::filter(continent == "Europe") %>%
+  group_by(country, year) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  ) %>%
+  ggplot(aes(x = year, y = lifeExp_mean, color = country)) +
+  geom_point() +
+  labs(
+    x = "Year",
+    y = "Life expectancy",
+    title = "Life expectancy in Europe"
+  )
+```
+
+```{r}
+# geom point
+gapminder %>%
+  dplyr::filter(continent == "Europe") %>%
+  group_by(country, year) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  ) %>%
+  ggplot(aes(x = year, y = lifeExp_mean)) +
+  geom_point() +
+  labs(
+    x = "Year",
+    y = "Life expectancy",
+    title = "Life expectancy in Europe"
+  ) +
+  facet_wrap(~country)
+
+# geom bar
+gapminder %>%
+  dplyr::filter(continent == "Europe") %>%
+  group_by(country, year) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  ) %>%
+  ggplot(aes(x = year, y = lifeExp_mean)) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "Year",
+    y = "Life expectancy",
+    title = "Life expectancy in Europe"
+  ) +
+  facet_wrap(~country)
+
+# no facet
+gapminder %>%
+  dplyr::filter(continent == "Europe") %>%
+  group_by(country, year) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  ) %>%
+  ggplot(aes(x = year, y = lifeExp_mean, fill = country)) +
+  geom_bar(stat = "identity") + # even if you not stack, still the plot looks messy or you can use geom_col()
+  labs(
+    x = "Year",
+    y = "Life expectancy",
+    title = "Life expectancy in Europe"
+  )
+```
+
+```{r}
+
+gapminder %>%
+  dplyr::filter(continent == "Europe") %>%
+  group_by(country, year) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  ) %>%
+  ggplot(aes(x = country, y = lifeExp_mean)) +
+  geom_boxplot() +
+  labs(
+    x = "Country",
+    y = "Life expectancy",
+    title = "Life expectancy in Europe"
+  ) +
+  coord_flip()
+```
+
+```{r}
+# without ordering
+gapminder %>%
+  dplyr::filter(continent == "Europe") %>%
+  group_by(country, year) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  ) %>%
+  ggplot(aes(x = reorder(country, lifeExp_mean), y = lifeExp_mean)) +
+  geom_boxplot() +
+  labs(
+    x = "Country",
+    y = "Life expectancy",
+    title = "Life expectancy in Europe"
+  ) +
+  coord_flip()
+
+# reorder
+gapminder %>%
+  dplyr::filter(continent == "Europe") %>%
+  group_by(country, year) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  ) %>%
+  ggplot(aes(x = reorder(country, -lifeExp_mean), y = lifeExp_mean)) +
+  geom_boxplot() +
+  labs(
+    x = "Country",
+    y = "Life expectancy",
+    title = "Life expectancy in Europe"
+  ) +
+  coord_flip()
+```
+
+#### Plotting text
+
+```{r}
+gapminder %>%
+  dplyr::filter(continent == "Asia" | continent == "Americas") %>%
+  group_by(continent, country) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  ) %>%
+  ggplot(aes(x = gdp_mean, y = lifeExp_mean)) +
+  geom_point() +
+  geom_text(aes(label = country)) +
+  scale_x_log10() +
+  facet_grid(~continent)
+```
+
+```{r}
+# with label
+gapminder %>%
+  dplyr::filter(continent == "Asia" | continent == "Americas") %>%
+  group_by(continent, country) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  ) %>%
+  ggplot(aes(x = gdp_mean, y = lifeExp_mean)) +
+  geom_point() +
+  geom_label(aes(label = country)) +
+  scale_x_log10() +
+  facet_grid(~continent)
+```
+
+```{r}
+# no overlaps
+gapminder %>%
+  dplyr::filter(continent == "Asia" | continent == "Americas") %>%
+  group_by(continent, country) %>%
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    lifeExp_mean = mean(lifeExp)
+  ) %>%
+  ggplot(aes(x = gdp_mean, y = lifeExp_mean)) +
+  geom_point() +
+  geom_text_repel(aes(label = country)) + # there's also geom_label_repel
+  scale_x_log10() +
+  facet_grid(~continent)
+```
