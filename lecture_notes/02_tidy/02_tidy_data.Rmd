@@ -31,6 +31,14 @@ pacman::p_load(
 ## Base R approach 
 
 ```{r}
+# univariate plot
+plot(gapminder$lifeExp)
+
+plot(subset(gapminder, year == 1997)$lifeExp)
+```
+
+```{r}
+# bivariate plot
 plot(gapminder$year, gapminder$lifeExp)
 ```
 
@@ -139,6 +147,11 @@ p + geom_point() + geom_smooth() # geom_smooth has calculated a smoothed line;
 
 ### Univariate distribution
 
+- Types of univariate plots (Nolan and Stoudt 2021: 72): 
+
+    - Quantitative: rug plot, histogram, density curve, box-and-whisker plot, violin plot, normal quantile plot
+    - Qualitative: bar plot, dot chart, line plot, pie chart
+
 -   `geom_histogram()`: For the probability distribution of a continuous variable. Bins divide the entire range of values into a series of intervals (see [the Wiki entry](https://en.wikipedia.org/wiki/Histogram)).
 -   `geom_density()`: Also for the probability distribution of a continuous variable. It calculates a [kernel density estimate](https://en.wikipedia.org/wiki/Kernel_density_estimation) of the underlying distribution.
 
@@ -185,6 +198,12 @@ midwest %>%
 
 ### Bivariate distributions
 
+- Types of bivariate plots (Nolan and Stoudt 2021: 72): 
+
+    - Both quantitative: scatter plot, smooth curve, contour plot, heat map
+    - Both qualitative: side-by-side bar plots, mosaic plot, overlaid lines
+    - Quantitative/Qualitative: overlaid density curves, side-by-side box-and-whisker plots, overlaid smooth curves, quantile-quantile plot
+
 ```{r}
 p <- ggplot(data = gapminder, 
             aes(x = gdpPercap, 
@@ -192,7 +211,11 @@ p <- ggplot(data = gapminder,
 
 # Scatter plot 
 p + geom_point()
+```
 
+Smoothing helps to clarify the trend(s).
+
+```{r}
 # Adding a smoothed line 
 
 p + geom_point() + 
@@ -201,6 +224,16 @@ p + geom_point() +
 p + geom_point() + 
   geom_smooth(method = "lm")
 
+# rug plot
+p + geom_point() +
+  geom_rug()
+```
+
+If observations are too few: consider using scatter plots without a smoothed line. 
+
+Discrete comparison 
+
+```{r}
 # Bar plot
 
 gapminder %>%
@@ -209,14 +242,31 @@ gapminder %>%
   ggplot(aes(x = fct_reorder(continent, avg_life_exp), y = avg_life_exp)) +
   geom_col() +
   coord_flip()
+```
 
-# Line plot 
+Temporal trends
 
+```{r}
+# Line plot using a summary
 gapminder %>%
   group_by(year) %>%
   summarize(avg_life_exp = mean(lifeExp)) %>%
   ggplot(aes(x = year, y = avg_life_exp)) +
   geom_line()
+
+# individual comparison 
+gapminder %>%
+  filter(continent == "Asia") %>%
+  ggplot(aes(x = year, y = lifeExp, 
+             col = country)) +
+  geom_line()
+
+# overall trend
+gapminder %>%
+  filter(continent == "Asia") %>%
+  ggplot(aes(x = year, y = lifeExp, 
+             fill = country)) +
+  geom_area()
 ```
 
 #### Advanced aes (size, color)
