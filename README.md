@@ -141,6 +141,8 @@ This class is committed to creating an environment in which everyone can partici
 * Reading: 
   - lecture notes
   - [Healy ch.3](https://socviz.co/makeplot.html#makeplot)
+  - Garrick Aden-Buie. [A Gentle Guide to the Grammar of Graphics
+with ggplot2](https://pkg.garrickadenbuie.com/gentle-ggplot2/#1)
 * Assignment #1 due (writing)
 
 ### 3rd Week 
