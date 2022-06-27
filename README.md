@@ -12,8 +12,8 @@ Why R? R is free, easy to learn (thanks to [tidyverse](https://www.tidyverse.org
 
 ## Logistics
 
-* Time: Monday & Wednesday 10:20-14:20 (KST)
-* Lecture Room: 205
+* Time: Monday & Wednesday 10:20-14:20 (KST) (12:00-12:40 lunch break)
+* Lecture Room: S205
 * Zoom link: Check out the EKDI site.
 
 ## Teaching philosophy 
