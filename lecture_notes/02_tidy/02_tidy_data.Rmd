@@ -1,4 +1,9 @@
-# Tidy data and the grammar of graphics
+---
+title: "Tidy data and the grammar of graphics"
+author: "Jae Yeon Kim"
+date: '`r Sys.Date()`'
+output: html_document
+---
 
 ## Objectives
 
@@ -14,7 +19,9 @@
 ifelse(packageVersion("dplyr") >= 1,
   "The installed version of dplyr package is greater than or equal to 1.0.0", update.packages("dplyr")
 )
+```
 
+```{r}
 if (!require("pacman")) install.packages("pacman")
 
 pacman::p_load(
@@ -24,7 +31,8 @@ pacman::p_load(
   ggthemes, # additional themes
   ggrepel, # arranging ggplots
   patchwork, # arranging ggplots
-  broom # tidying model outputs
+  broom, # tidying model outputs
+  gtsummary
 )
 ```
 
@@ -93,6 +101,20 @@ Practically, this approach is right because you will have consistency in data fo
 
 Computationally, this approach is useful for vectorized programming because "different variables from the same observation are always paired". Vectorized means a function applies to a vector that treats each element individually (=operations working in parallel).
 
+**Group practice**
+
+* 1. Form a group of 2. So, basically, find your partner. From now on, we will do pair programming a lot.
+
+* 2. Solve the following problems together. 
+
+```{r}
+# 1. How many continents and countries are in the dataset?
+
+# 2. How many years are observed in the dataset?
+
+# 3. Identify grouping variables. For instance, if there's a school, a grouping variable is a class because students are nested in a class.
+```
+
 ## Visualizing (ggplot2)
 
 -   The following material is adapted from Kieran Healy's excellent book (2019) on [data visualization](https://socviz.co/) and Hadley Wickham's equally excellent book on [ggplot2](https://ggplot2-book.org/). For more theoretical discussions, I recommend you to read [The Grammar of Graphics](https://link.springer.com/book/10.1007%2F0-387-28695-0) by Leland Wilkinson.
@@ -140,10 +162,16 @@ p <- ggplot(
 p
 
 p + geom_point()
+```
 
+```{r}
 p + geom_point() + geom_smooth() # geom_smooth has calculated a smoothed line;
 # the shaded area is the standard error for the line
 ```
+
+**Question**
+
+* What do you think about the figure above? Think about the x- and y-scale.
 
 ### Univariate distribution
 
@@ -166,18 +194,22 @@ midwest
 ```{r, eval = FALSE}
 midwest %>%
   ggplot(aes(x = area)) +
-  geom_point() # not working.
+  geom_point() # Not working. Why not working?
 ```
 
 ```{r}
 midwest %>%
   ggplot(aes(x = area)) +
   geom_histogram() # stat_bin argument picks up 30 bins (or "bucket") by default.
+```
 
+```{r}
 midwest %>%
   ggplot(aes(x = area)) +
   geom_histogram(bins = 10) # only 10 bins.
+```
 
+```{r}
 ggplot(
   data = subset(midwest, state %in% c("OH", "IN")),
   mapping = aes(x = percollege, fill = state)
@@ -268,6 +300,12 @@ gapminder %>%
              fill = country)) +
   geom_area()
 ```
+
+**Group discussion**
+
+* 1. Form a group of 4-5.
+* 2. Discuss which figure you prefer for what argument for 15 minutes. 
+* 3. Present your ideas for a maximum of 3 minutes.
 
 #### Advanced aes (size, color)
 

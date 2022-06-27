@@ -5,22 +5,27 @@ date: '`r Sys.Date()`'
 output: html_document
 ---
 
-# Getting started in R 
+# The basic picture 
 
-## The Big Picture 
+If we were using a car analogy ... 
 
-When you are reading this section, please note that you've already grasped some key concepts behind R programming language (functions and objects). 
+R = engine 
 
-UNIX Commands (`cat`) = R Functions (`print`) 
-Files = R Objects 
+RStudio = dashboard 
+
+# Checking whether the R was installed in your computer (=local machine) properly
+
+```{sh}
+# type this in the terminal 
+R --version 
+```
 
 ## RStudio 
 
 There are two main ways of interacting with R: using the console or using script files (plain text files containing your code).
 
 If R is ready to accept commands, the R console shows a `>` prompt. If it receives a command (by typing, copy-pasting, or sent from the script editor using `Ctrl-Enter`; `Command-Enter` will also work on Macs), R will try to execute it, and when ready, show the results and come back with a new `>`-prompt to wait for further commands. This is the equivalent of the `$` in your terminal. 
-
-## Basic Syntax
+## Objects 
 
 **Comments**
 
@@ -36,21 +41,17 @@ USweird <- "Why use lb for pound!" # Use this
 "Why use lb for pound!" = USweird
 ```
 
-Nonetheless, *can* does not mean you *should*. It is good practice to use `<-` for assignments. `=` should only be used to specify the values of arguments of functions. This is what Google and Hadley Wickham recommend as well. If they don't convince you enough, here's [a real example](https://csgillespie.wordpress.com/2010/11/16/assignment-operators-in-r-vs/).
+## Functions 
 
 ```{r}
+nums <- c(1:10, NA, 15, NA)
 
-mean(x = 1:10) # Does it save x?
-rm(x)
+mean(nums)
 
-mean(x <- 1:10) # Does it save x?
-rm(x)
+mean(nums, na.rm = TRUE)
 
+mean(nums, na.rm = TRUE, trim = 0.1)
 ```
-
-**Printing**
-
-In R, an object's contents can be printed by simply executing the object name or calling the ```print()``` function.
 
 **Help**
 
@@ -58,7 +59,6 @@ In R, an object's contents can be printed by simply executing the object name or
 * `??` + object searches help pages containing the name of the object
 
 ```{r, eval = FALSE}
-
 ?mean
 ??mean
 help(mean)
@@ -68,7 +68,17 @@ help(mean)
 example(ls) # provides an example(s) for how to use ls 
 
 help.search("visualization") # search functions and packages that have "visualization" in their descriptions
+```
 
+**Pipe operator** 
+
+```{r}
+# past 
+library(magrittr)
+c(5, 5, 5) %>% unique()
+
+# present R >= 4.1 
+c(5, 5, 5) |> unique()
 ```
 
 ## Environment 

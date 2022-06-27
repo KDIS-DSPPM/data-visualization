@@ -1,4 +1,6 @@
-# Visualizing models
+---
+title: "Visualizing models"
+---
 
 ## Objectives 
 
@@ -23,13 +25,51 @@ pacman::p_load(
   ggthemes, # additional themes
   ggrepel, # arranging ggplots
   patchwork, # arranging ggplots
-  broom # tidying model outputs
+  broom, # tidying model outputs
+  estimatr, # robust estimation
+  marginaleffects, # tidy marginal effects 
+  modelsummary, # tidy summary tables and graphs 
+  scales # scales
 )
 ```
 
 ## Ploting models 
 
 In plotting models, we extensively use David Robinson's [broom package](https://cran.r-project.org/web/packages/broom/vignettes/broom.html) in R. The idea is to transform model outputs (i.e., predictions and estimations) into tidy objects so that we can easily combine, separate, and visualize these elements. 
+
+### Simpler version 
+
+```{r}
+p <- gapminder %>%
+  ggplot(aes(x = log(gdpPercap), y = lifeExp))
+
+# model comparison 
+
+p + geom_point(alpha=0.3) +
+  geom_smooth(color = "tomato",
+              fill = "tomato",
+              method = MASS::rlm) +
+  geom_smooth(color = "steelblue",
+              fill = "steelblue",
+              method = "lm") + 
+  labs(title = "Robust and OLS fits")
+
+# piece-wise polynomial function
+p + geom_point(alpha=0.1) +
+    geom_smooth(color = "tomato", 
+                method = "lm", 
+                size = 1.2, 
+                formula = y ~ splines::bs(x, 3), 
+                se = FALSE)
+
+# quantile regression
+p + geom_point(alpha=0.1) +
+    geom_quantile(color = "tomato", 
+                  size = 1.2, 
+                  method = "rqss",
+                  lambda = 1, 
+                  quantiles = c(0.20, 0.5, 0.85))
+```
 
 ### Plotting several fits at the same time
 
@@ -53,7 +93,6 @@ gapminder %>%
 ### Extracting model outcomes 
 
 ```{r}
-
 # regression model
 out <- lm(
   formula = lifeExp ~ gdpPercap + pop + continent,

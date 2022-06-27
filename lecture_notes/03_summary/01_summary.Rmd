@@ -1,5 +1,6 @@
-
-# Tidy data and the grammar of graphics
+---
+title: "Tidy data and the grammar of graphics"
+---
 
 ## Objectives 
 
@@ -67,9 +68,13 @@ Facetting is to make small multiples.
 p <- ggplot(gapminder, aes(x = year, y = gdpPercap))
 
 p + geom_line(aes(group = country)) # group by, # The outlier is Kuwait.
+```
 
+```{r}
 p + geom_line(aes(group = country)) + facet_wrap(~continent) # facetting
+```
 
+```{r}
 p + geom_line(aes(group = country), color = "gray70") +
   geom_smooth(size = 1.1, method = "loess", se = FALSE) +
   scale_y_log10(labels = scales::dollar) +
@@ -120,7 +125,9 @@ ggplot(data = gapminder_formatted, aes(x = year, y = lifeExp_mean, color = conti
     y = "Life expectancy",
     title = "Life expectancy on Five continents"
   )
+```
 
+```{r}
 gapminder %>%
   dplyr::filter(continent == "Europe") %>%
   group_by(country, year) %>%
@@ -154,7 +161,9 @@ gapminder %>%
     title = "Life expectancy in Europe"
   ) +
   facet_wrap(~country)
+```
 
+```{r}
 # geom bar
 gapminder %>%
   dplyr::filter(continent == "Europe") %>%
@@ -171,7 +180,9 @@ gapminder %>%
     title = "Life expectancy in Europe"
   ) +
   facet_wrap(~country)
+```
 
+```{r}
 # no facet
 gapminder %>%
   dplyr::filter(continent == "Europe") %>%
@@ -190,7 +201,6 @@ gapminder %>%
 ```
 
 ```{r}
-
 gapminder %>%
   dplyr::filter(continent == "Europe") %>%
   group_by(country, year) %>%

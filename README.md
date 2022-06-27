@@ -184,6 +184,6 @@ This class is committed to creating an environment in which everyone can partici
 
 ## Special thanks
 
-The course materials are adapted from Kieran Healy's excellent book (2019) on [data visualization](https://socviz.co/), Hadley Wickham's equally excellent book on [ggplot2](https://ggplot2-book.org/), and Andrew Heiss's amazing (really) [Data Visualization](https://datavizs21.classes.andrewheiss.com/) course. 
+The course materials are adapted from Kieran Healy's excellent book (2019) on [data visualization](https://socviz.co/) plus his [data visualization course materials](https://github.com/kjhealy/data_visualization), Hadley Wickham's equally excellent book on [ggplot2](https://ggplot2-book.org/), and Andrew Heiss's amazing (really) [Data Visualization](https://datavizs21.classes.andrewheiss.com/) course. 
 
 ![](https://i.creativecommons.org/l/by/4.0/88x31.png) This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).

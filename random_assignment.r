@@ -19,7 +19,7 @@ names <- names[!is.na(names)]
 n <- length(names)
 k <- 3
 
-group_id <- sample(rep(1:5, each = ceiling(n/k)), n, replace = FALSE)
+group_id <- sample(rep(1:4, each = ceiling(n/k)), n, replace = FALSE)
 
 df <- data.frame(names = names,
                  id = group_id)
