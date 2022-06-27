@@ -40,7 +40,6 @@ Basic ideas:
 - Can you guess what's wrong?
 
 ```{r}
-
 p <- ggplot(gapminder, aes(x = year, y = gdpPercap))
 
 p + geom_point()

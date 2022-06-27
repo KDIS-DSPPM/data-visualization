@@ -16,7 +16,10 @@ names <- names[!is.na(names)]
 
 # Randomly assign students into two groups
 
-group_id <- sample(rep(1:3, each = 5), length(names), replace = FALSE)
+n <- length(names)
+k <- 3
+
+group_id <- sample(rep(1:5, each = ceiling(n/k)), n, replace = FALSE)
 
 df <- data.frame(names = names,
                  id = group_id)
