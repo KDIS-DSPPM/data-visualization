@@ -146,6 +146,7 @@ with ggplot2](https://pkg.garrickadenbuie.com/gentle-ggplot2/#1)
 
 ### 3rd Week 
 
+* Special lecture by [Dr. Jaeung Sim](https://sites.google.com/view/jaeungsim) (incoming AP at the UConn School of Business)
 * Visualizing raw data and summary statistics 
 * Reading
   - lecture notes
