@@ -2,8 +2,6 @@
 
 Summer 2022 
 
-* Instructor: [Jae Yeon Kim](https://jaeyk.github.io/)
-
 This advanced course introduces students to data visualization. Data doesn't speak for itself, so you need to analyze it and make the findings accessible by presenting them with effective visualization. In this course, we first focus on why some data visualization work and others don't. Second, we learn how to visualize data in an efficient and reproducible way using data science tools and techniques. Third, we practice plotting raw data, descriptive, and model summaries. We also practice writing and thereby communicating about these data visualizations.
 
 Why R? R is free, easy to learn (thanks to [tidyverse](https://www.tidyverse.org/)), fast (thanks to [rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html#:~:text=The%20'Rcpp'%20package%20provides%20R,integration%20of%20third%2Dparty%20libraries.)), runs everywhere, open (16,000+ packages; counting only ones available at the [CRAN](https://cran.r-project.org/)), and has a growing massive and inclusive community called [#rstats](https://twitter.com/search?q=%23rstats&src=hashtag_click).
