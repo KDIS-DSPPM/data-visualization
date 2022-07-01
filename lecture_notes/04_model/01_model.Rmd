@@ -2,14 +2,14 @@
 title: "Visualizing models"
 ---
 
-## Objectives 
+## Objectives
 
-- Learning ... tktk 
-- Practicing ... tktk
+-   Learning how to visualize models using the tidyverse and ggplot2 framework
+-   Practicing plotting models and their properties in various ways
 
 ## Setup
 
-- Check your `dplyr` package is up-to-date by typing `packageVersion("dplyr")`. If the current installed version is less than 1.0, then update by typing `update.packages("dplyr")`. You may need to restart R to make it work.
+-   Check your `dplyr` package is up-to-date by typing `packageVersion("dplyr")`. If the current installed version is less than 1.0, then update by typing `update.packages("dplyr")`. You may need to restart R to make it work.
 
 ```{r}
 ifelse(packageVersion("dplyr") >= 1,
@@ -33,11 +33,23 @@ pacman::p_load(
 )
 ```
 
-## Ploting models 
+## Ploting models
 
-In plotting models, we extensively use David Robinson's [broom package](https://cran.r-project.org/web/packages/broom/vignettes/broom.html) in R. The idea is to transform model outputs (i.e., predictions and estimations) into tidy objects so that we can easily combine, separate, and visualize these elements. 
+### Models
 
-### Simpler version 
+```{r}
+lm.out <- lm(data = gapminder, lifeExp ~ gdpPercap)
+
+lm.out
+
+class(lm.out) # custom type 
+
+typeof(lm.out) # data type (defined by R)
+```
+
+In plotting models, we extensively use David Robinson's [broom package](https://cran.r-project.org/web/packages/broom/vignettes/broom.html) in R. The idea is to transform model outputs (i.e., predictions and estimations) into tidy objects so that we can easily combine, separate, and visualize these elements.
+
+### Simpler version
 
 ```{r}
 p <- gapminder %>%
@@ -90,7 +102,7 @@ gapminder %>%
   scale_fill_manual(name = "Models", values = model_colors)
 ```
 
-### Extracting model outcomes 
+### Extracting model outcomes
 
 ```{r}
 # regression model
@@ -102,13 +114,13 @@ out <- lm(
 
 `tidy()` is a method in the `broom` package. It "constructs a dataframe that summarizes the model's statistical findings". As the description states, tidy is a function that can be used for various models. For instance, a tidy can extract the following information from a regression model.
 
-- `Term`: a term being estimated 
-- `p.value`
-- `statistic`: a test statistic used to compute p-value
-- `estimate` 
-- `conf.low`: the low end of a confidence interval 
-- `conf.high`: the high end of a confidence interval
-- `df`: degrees of freedom
+-   `Term`: a term being estimated
+-   `p.value`
+-   `statistic`: a test statistic used to compute p-value
+-   `estimate`
+-   `conf.low`: the low end of a confidence interval
+-   `conf.high`: the high end of a confidence interval
+-   `df`: degrees of freedom
 
 **Challenge**
 
@@ -143,14 +155,108 @@ out_conf %>%
   coord_flip() +
   labs(x = "", y = "OLS Estimate") +
   theme_bw()
+```
 
-# another way to do it (errorbar)
+```{r}
+# another way to do it: bar plot + error bar 
 out_conf %>%
   ggplot(aes(x = estimate, y = reorder(term, estimate))) +
+  geom_col(alpha = .3) +
   geom_point() +
   geom_errorbarh(aes(xmin = conf.low, xmax = conf.high)) +
   labs(y = "", x = "OLS Estimate") +
   theme_bw()
 ```
 
-You can also calculate marginal effects using the [`marginaleffects`](https://vincentarelbundock.github.io/marginaleffects/) package. 
+```{r}
+# another way to do it: cross bar
+out_conf %>%
+  ggplot(aes(x = estimate, y = reorder(term, estimate))) +
+  geom_crossbar(aes(xmin = conf.low, xmax = conf.high),
+                  color = "midnightblue", alpha = 0.8) +
+  labs(y = "", x = "OLS Estimate") +
+  theme_bw()
+```
+
+### Using modelsummary
+
+`modeulsummary` is an excellent package in R that shows how you should plot a model properly. It would help if you still learned plotting hardway to understand the nuts and bolts of plotting in R.
+
+```{r}
+models <- list(
+  "OLS" = lm(poptotal ~ area + inmetro,
+  data = midwest),
+  "Poisson" = glm(poptotal ~ area + inmetro,
+  data = midwest, family = "poisson"
+))
+
+# Regression table (for the data table, check out datasummary())
+modelsummary(models,
+             coef_omit = "Intercept")
+
+ols <- lm(poptotal ~ area + inmetro,
+  data = midwest)
+
+# one model
+modelplot(ols)
+
+# multiple models
+modelplot(models)
+
+# facetting models 
+models <- dvnames(models) # rename our list with names matching the dependent variable names in each model
+
+# modelplot(models, draw= FALSE)
+modelplot(models) + facet_grid(~model)
+```
+
+### Plotting research design
+
+```{r}
+# Replication Archive for
+# Coppock, Alexander. Visualize as You Randomize: Design-Based Statistical Graphs for Randomized Experiments
+# Advances in Experimental Political Science, James N. Druckman and Donald P. Green, editors
+
+setwd(here("lecture_notes", "04_model"))
+
+df <- read_csv("two_arm_simulated_data.csv")
+
+summary_df <-
+  df %>%
+  group_by(condition) %>%
+  do(tidy(lm_robust(Y ~ 1, data = .))) %>% # fitting an intercept only = difference in means estimation 
+  mutate(Y = estimate)
+
+good <-
+  ggplot(summary_df, aes(condition, Y)) +
+  geom_point(
+    data = df,
+    position = position_jitter(width = 0.2, height = 0.1),
+    alpha = 0.2
+  ) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0) +
+  theme_bw() +
+  scale_y_continuous(breaks = seq(0, 1, length.out = 5)) +
+  coord_cartesian(ylim = c(-0.1, 1.1)) +
+  theme(axis.title.x = element_blank()) +
+  ylab("Outcome variable [1 = 'Yes', 0 = otherwise]")
+
+bad <-
+  ggplot(summary_df, aes(condition, Y)) +
+  geom_col() +
+  theme_bw() +
+  scale_y_continuous(breaks = seq(0, 1, length.out = 5)) +
+  coord_cartesian(ylim = c(-0.1, 1.1)) +
+  theme(axis.title.x = element_blank()) +
+  ylab("Outcome variable [1 = 'Yes', 0 = otherwise]")
+
+good
+
+bad
+```
+
+**Group activity**
+
+1. Form a group of 3-4.
+2. Discuss why the good plot is good and the bad plot is bad in terms of communicating research design. Note that this is a two arm experiment.
