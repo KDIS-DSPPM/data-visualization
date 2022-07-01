@@ -5,13 +5,24 @@ date: '`r Sys.Date()`'
 output: html_document
 ---
 
-# The basic picture 
+# The basic picture
 
-If we were using a car analogy ... 
+If we were using a car analogy ...
 
-R = engine 
+R = engine
 
-RStudio = dashboard 
+RStudio = dashboard
+
+```{r}
+num <- 1:1000
+```
+
+```{r}
+# assigning a numeric vector for an in-class demonstration 
+num <- 1:1000
+
+num_mean <- mean(num)
+```
 
 # Checking whether the R was installed in your computer (=local machine) properly
 
@@ -20,20 +31,19 @@ RStudio = dashboard
 R --version 
 ```
 
-## RStudio 
+## RStudio
 
 There are two main ways of interacting with R: using the console or using script files (plain text files containing your code).
 
-If R is ready to accept commands, the R console shows a `>` prompt. If it receives a command (by typing, copy-pasting, or sent from the script editor using `Ctrl-Enter`; `Command-Enter` will also work on Macs), R will try to execute it, and when ready, show the results and come back with a new `>`-prompt to wait for further commands. This is the equivalent of the `$` in your terminal. 
-## Objects 
+If R is ready to accept commands, the R console shows a `>` prompt. If it receives a command (by typing, copy-pasting, or sent from the script editor using `Ctrl-Enter`; `Command-Enter` will also work on Macs), R will try to execute it, and when ready, show the results and come back with a new `>`-prompt to wait for further commands. This is the equivalent of the `$` in your terminal. \## Objects
 
 **Comments**
 
-Use `#` signs to comment. Comment liberally in your R scripts. Anything to the right of a `#` is ignored by R. For those of you familiar with other languages, there is no doc string, or equivalent to `""``` in R.
+Use `#` signs to comment. Comment liberally in your R scripts. Anything to the right of a `#` is ignored by R. For those of you familiar with other languages, there is no doc string, or equivalent to \`""\`\`\` in R.
 
 **Assignment operator**
 
-`<-` is the assignment operator. It assigns values on the right to objects on the left. So, after executing `x <- 3`, `x` value is `3`. The arrow can be read as 3 **goes into** `x`.  You can also use `=` for assignments. 
+`<-` is the assignment operator. It assigns values on the right to objects on the left. So, after executing `x <- 3`, `x` value is `3`. The arrow can be read as 3 **goes into** `x`. You can also use `=` for assignments.
 
 ```{r}
 USweird <- "Why use lb for pound!" # Use this
@@ -41,7 +51,7 @@ USweird <- "Why use lb for pound!" # Use this
 "Why use lb for pound!" = USweird
 ```
 
-## Functions 
+## Functions
 
 ```{r}
 nums <- c(1:10, NA, 15, NA)
@@ -55,8 +65,8 @@ mean(nums, na.rm = TRUE, trim = 0.1)
 
 **Help**
 
-* `?` + object opens a help page for that specific object
-* `??` + object searches help pages containing the name of the object
+-   `?` + object opens a help page for that specific object
+-   `??` + object searches help pages containing the name of the object
 
 ```{r, eval = FALSE}
 ?mean
@@ -70,7 +80,7 @@ example(ls) # provides an example(s) for how to use ls
 help.search("visualization") # search functions and packages that have "visualization" in their descriptions
 ```
 
-**Pipe operator** 
+**Pipe operator**
 
 ```{r}
 # past 
@@ -81,13 +91,13 @@ c(5, 5, 5) %>% unique()
 c(5, 5, 5) |> unique()
 ```
 
-## Environment 
+## Environment
 
-Environment = a collection of pairs 
+Environment = a collection of pairs
 
-### Objects 
+### Objects
 
-- List objects in your current environment
+-   List objects in your current environment
 
 ```{r, eval = FALSE}
 
@@ -102,7 +112,7 @@ rm(x)
 
 ```
 
-- Remove objects from your current environment
+-   Remove objects from your current environment
 
 ```{r, eval = TRUE, echo = TRUE}
 
@@ -114,7 +124,7 @@ rm(x)
 
 ```
 
-- Remove all objects from your current environment
+-   Remove all objects from your current environment
 
 ```{r, eval = FALSE}
 
@@ -128,7 +138,7 @@ rm(list = ls())
 
 ```
 
-- Force memory release 
+-   Force memory release
 
 ```{r, eval = FALSE}
 
@@ -138,9 +148,9 @@ gc()
 
 ```
 
-### Packages 
+### Packages
 
-`install.packages(package-name)` will download a package from one of the CRAN mirrors, assuming that a binary is available for your operating system. 
+`install.packages(package-name)` will download a package from one of the CRAN mirrors, assuming that a binary is available for your operating system.
 
 ```{r, eval = FALSE}
 
@@ -179,7 +189,7 @@ pkgs <- c("ggplot2", "dplyr", "broom")
 
 install.packages(pkgs)
 ```
-  
+
 Still, we have to write two lines. The more straightforward, the better, right? Here's another approach that can simplify the code further.
 
 Note that `lapply()` applies (there's a family of apply functions) a function to a list. In this case, library to pkgs. `apply` is an advanced concept related to anonymous functions. We will learn about it later when we study functions.
@@ -193,31 +203,31 @@ inst <- lapply(pkgs, library,
 
 # Project-oriented research
 
-## The Big Picture 
+## The Big Picture
 
 **Computational reproducibility**
 
-* Replication = code + data 
+-   Replication = code + data
 
-* Computational reproduciblity = code + data + environment + distribution 
+-   Computational reproduciblity = code + data + environment + distribution
 
-* Reproducibility checklist by [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/)
+-   Reproducibility checklist by [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/)
 
-    1. Start with science (avoid vague questions and concepts)
-    
-    2. Don't do things by hand (not only about automation but also documentation)
-    
-    3. Don't point and click (same problem)
-    
-    4. Teach a computer (automation also solves documentation to some extent)
-    
-    5. Use some version control 
-    
-    6. Don't save output (instead, keep the input and code)
-    
-    7. Set your seed 
-    
-    8. Think about the entire pipeline 
+    1.  Start with science (avoid vague questions and concepts)
+
+    2.  Don't do things by hand (not only about automation but also documentation)
+
+    3.  Don't point and click (same problem)
+
+    4.  Teach a computer (automation also solves documentation to some extent)
+
+    5.  Use some version control
+
+    6.  Don't save output (instead, keep the input and code)
+
+    7.  Set your seed
+
+    8.  Think about the entire pipeline
 
 ## Setup
 
@@ -228,36 +238,35 @@ pacman::p_load(
 )
 ```
 
-## Motivation 
+## Motivation
 
-Why do you need to make your research computationally reproducible?: for your self-interest and public benefits. 
+Why do you need to make your research computationally reproducible?: for your self-interest and public benefits.
 
 ![](https://GitHub.com/dlab-berkeley/efficient-reproducible-project-management-in-R/blob/master/misc/screenshot.png?raw=true)
 
-### How to organize files in a project 
+### How to organize files in a project
 
-You won't be able to reproduce your project unless it is efficiently organized. 
+You won't be able to reproduce your project unless it is efficiently organized.
 
 Step 1. [**Environment**](https://environments.rstudio.com/) is part of your project. If someone can't reproduce your environment, they won't be able to run your code.
 
-- Launch R Studio. Tools > Global Options. You **should not** check Restore .RData into workspace at startup. Also, set the saving workspace option to **NEVER.**
+-   Launch R Studio. Tools \> Global Options. You **should not** check Restore .RData into workspace at startup. Also, set the saving workspace option to **NEVER.**
 
-Step 2. For each project, create a project directory named after the project. 
+Step 2. For each project, create a project directory named after the project.
 
-name_of_the_project 
+name_of_the_project
 
-- data: 
-  - raw 
-  - processed (all processed, cleaned, and tided)
-- figures 
-- packrat (optional) 
-- reports (PDF, HTML, TEX, etc.,) 
-- results (model outcomes, etc.,)
-- scripts (i.e., functions)
-- .gitignore (for Git)
-- name_of_project.Rproj (for R)
-- README.md (for Git) 
-
+-   data:
+    -   raw
+    -   processed (all processed, cleaned, and tided)
+-   figures
+-   packrat (optional)
+-   reports (PDF, HTML, TEX, etc.,)
+-   results (model outcomes, etc.,)
+-   scripts (i.e., functions)
+-   .gitignore (for Git)
+-   name_of_project.Rproj (for R)
+-   README.md (for Git)
 
 ```{r eval = FALSE}
 
@@ -267,13 +276,13 @@ dir.create("../us_election")
 
 ```
 
-Step 3. Launch R Studio. Choose File > New project > Browse existing directories > Create project. This allows each project has its workspace. 
+Step 3. Launch R Studio. Choose File \> New project \> Browse existing directories \> Create project. This allows each project has its workspace.
 
 Step 4. Organize files by putting them in separate subdirectories and sensibly naming them.
 
-- Treat raw data as read-only (raw data should be RAW!) and put it in the `data` subdirectory.
+-   Treat raw data as read-only (raw data should be RAW!) and put it in the `data` subdirectory.
 
-    - Again, note that version control does not need to replace backup. You still need to back up your raw data. 
+    -   Again, note that version control does not need to replace backup. You still need to back up your raw data.
 
 ```{r eval = FALSE}
 
@@ -281,7 +290,7 @@ dir.create(here::here("us_election", "data"))
 
 ```
 
-- Separate read-only data from processed data and put in the `processed_data` subdirectory.
+-   Separate read-only data from processed data and put in the `processed_data` subdirectory.
 
 ```{r eval = FALSE}
 
@@ -289,7 +298,7 @@ dir.create(here::here("us_election", "processed_data"))
 
 ```
 
-- Put your code in the `src` subdirectory. 
+-   Put your code in the `src` subdirectory.
 
 ```{r eval = FALSE}
 
@@ -297,7 +306,7 @@ dir.create(here::here("us_election", "src"))
 
 ```
 
-- Put generated outputs (e.g., tables, figures) in the `outputs` subdirectory and treat them as disposable.
+-   Put generated outputs (e.g., tables, figures) in the `outputs` subdirectory and treat them as disposable.
 
 ```{r eval = FALSE}
 
@@ -305,7 +314,7 @@ dir.create(here::here("us_election", "outputs"))
 
 ```
 
-- Put your custom functions in the `functions` subdirectory. Then, you can gather some of these functions and distribute them as an open-source library. 
+-   Put your custom functions in the `functions` subdirectory. Then, you can gather some of these functions and distribute them as an open-source library.
 
 ```{r eval = FALSE}
 
@@ -337,36 +346,32 @@ purrr::map(c("data", "processed_data", "src", "outputs", "functions"), create_di
 
 **Challenge**
 
-Set a project structure for a project named "starwars." 
+Set a project structure for a project named "starwars."
 
-### How to organize code in an R markdown file 
+### How to organize code in an R markdown file
 
-- In addition to environment, **workflow** is an essential component of project efficiency and reproducibility. 
+-   In addition to environment, **workflow** is an essential component of project efficiency and reproducibility.
 
-- What is R markdown? An R package, developed by [Yihui Xie](https://yihui.org/en/), provides an authoring framework for data science. Xie is also a developer of many widely popular R packages such as `knitr,` [`xaringan`](https://GitHub.com/yihui/xaringan) (cool kids use xaringan not [Beamer](https://en.wikipedia.org/wiki/Beamer_(LaTeX)) these days), `blogdown` (used to create [my personal website](https://jaeyk.GitHub.io/)), and `bookdown` (used to create this book) among many others.
+-   What is R markdown? An R package, developed by [Yihui Xie](https://yihui.org/en/), provides an authoring framework for data science. Xie is also a developer of many widely popular R packages such as `knitr,` [`xaringan`](https://GitHub.com/yihui/xaringan) (cool kids use xaringan not [Beamer](https://en.wikipedia.org/wiki/Beamer_(LaTeX)) these days), `blogdown` (used to create [my personal website](https://jaeyk.GitHub.io/)), and `bookdown` (used to create this book) among many others.
 
-  - Many applications: [reports](https://rstudio.GitHub.io/distill/basics.html), [presentations](https://bookdown.org/yihui/rmarkdown/xaringan.html), [dashboards](https://rmarkdown.rstudio.com/flexdashboard/), [websites](https://bookdown.org/yihui/rmarkdown/websites.html)  
-  - Check out [Communicating with R markdown workshop](https://ysc-rmarkdown.netlify.app/) by [Alison Hill](https://alison.rbind.io/) (RStudio)
-    - Alison Hill is a co-author of [`blogdown: Creating Websites with R Markdown.`](https://bookdown.org/yihui/blogdown/) 
-  - Key strengths: dynamic reporting + reproducible science + easy deployment
-
+    -   Many applications: [reports](https://rstudio.GitHub.io/distill/basics.html), [presentations](https://bookdown.org/yihui/rmarkdown/xaringan.html), [dashboards](https://rmarkdown.rstudio.com/flexdashboard/), [websites](https://bookdown.org/yihui/rmarkdown/websites.html)\
+    -   Check out [Communicating with R markdown workshop](https://ysc-rmarkdown.netlify.app/) by [Alison Hill](https://alison.rbind.io/) (RStudio)
+        -   Alison Hill is a co-author of [`blogdown: Creating Websites with R Markdown.`](https://bookdown.org/yihui/blogdown/)
+    -   Key strengths: dynamic reporting + reproducible science + easy deployment
 
 ![Concept map for R Markdown. By Gabriela Sandoval, Florencia D'Andrea, Yanina Bellini Saibene, Monica Alonso.](https://GitHub.com/rstudio/concept-maps/raw/master/en/rmarkdown.svg)
-
 
 ```{=html}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s9aWmU0atlQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p>R Markdown The bigger picture - Garrett Grolemund</p>
 ```
-
 ```{=html}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Xn5AmUf7gDQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p>R-Ladies Oslo (English) - Reports to impress your boss! Rmarkdown magic - Athanasia Mowinckel</p>
 ```
-
-- R Markdown basic syntax 
+-   R Markdown basic syntax
 
 ```{r}
 # Header 1
@@ -374,7 +379,7 @@ Set a project structure for a project named "starwars."
 ### Header 3
 ```
 
-- Use these section headers to indicate workflow.
+-   Use these section headers to indicate workflow.
 
 ```{r}
 # Import packages and data
@@ -384,19 +389,18 @@ Set a project structure for a project named "starwars."
 # Visualize data
 ```
 
-Press `ctrl + shift + o`. You can see a document outline based on these headers. This is a nice feature for finding the code you need to focus on. 
+Press `ctrl + shift + o`. You can see a document outline based on these headers. This is a nice feature for finding the code you need to focus on.
 
-If your project's scale is large, divide these sections into files and numbers and save them in the `code` subdirectory. 
+If your project's scale is large, divide these sections into files and numbers and save them in the `code` subdirectory.
 
-   - 01_wrangling.Rmd
-   - 02_modeling.Rmd 
-   ... 
+-   01_wrangling.Rmd
+-   02_modeling.Rmd ...
 
 ### Making a project computationally reproducible
 
-- `setwd()`: set a working directory. 
+-   `setwd()`: set a working directory.
 
-- Note that using `setwd()` is not a reproducible way to set up your project. For instance, none will be able to run the following code except me.
+-   Note that using `setwd()` is not a reproducible way to set up your project. For instance, none will be able to run the following code except me.
 
 ```{r eval = FALSE}
 
@@ -413,11 +417,11 @@ ggsave("./outputs/example.png") # This is called relative path
 
 ```
 
-- Instead, learn how to use `here()`'.
+-   Instead, learn how to use `here()`'.
 
-   - Key idea: separate workflow (e.g., workspace information) from products (code and data). For more information, please read Jenny Bryan's excellent piece on [project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/).
+    -   Key idea: separate workflow (e.g., workspace information) from products (code and data). For more information, please read Jenny Bryan's excellent piece on [project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/).
 
-   - Example 
+    -   Example
 
 ```{r eval = FALSE}
 
@@ -430,57 +434,63 @@ ggsave(here("project", "outputs", "example.png"))
 
 ```
 
-   - How `here` works 
+-   How `here` works
 
-   `here()` function shows what's the top-level project directory. 
+`here()` function shows what's the top-level project directory.
 
 ```{r eval = FALSE}
 
 here::here()
 
 ```
-   - Build a path including subdirectories 
+
+-   Build a path including subdirectories
 
 ```{r eval = FALSE}
 
 here::here("project", "outputs")
            #depth 1   #depth 2
 ```
-   - How `here` defines the top-level project directory. For example, the following list came from [the here package vignette](https://GitHub.com/jennybc/here_here)).
 
-      - Is a file named .here present?
-      - Is this an RStudio Project? (**Note that we already set up an RStudio Project!** So, if you use RStudio's project feature, then you are ready to use `here`.)
-      - Is this an R package? Does it have a DESCRIPTION file?
-      - Is this a remake project? Does it have a file named `remake.yml`?
-      - Is this a projectile project? Does it have a file named `.projectile`?
-      - Is this a checkout from a version control system? Does it have a directory named `.git` or `.svn`? Currently, only Git and Subversion are supported.
+-   How `here` defines the top-level project directory. For example, the following list came from [the here package vignette](https://GitHub.com/jennybc/here_here)).
 
-      - If there's no match then use `set_here()` to create an empty `.here` file. 
+    -   Is a file named .here present?
+
+    -   Is this an RStudio Project? (**Note that we already set up an RStudio Project!** So, if you use RStudio's project feature, then you are ready to use `here`.)
+
+    -   Is this an R package? Does it have a DESCRIPTION file?
+
+    -   Is this a remake project? Does it have a file named `remake.yml`?
+
+    -   Is this a projectile project? Does it have a file named `.projectile`?
+
+    -   Is this a checkout from a version control system? Does it have a directory named `.git` or `.svn`? Currently, only Git and Subversion are supported.
+
+    -   If there's no match then use `set_here()` to create an empty `.here` file.
 
 **Challenge**
 
-1. Can you define computational reproducibility? 
-2. Can you explain why sharing code and data is not enough for computational reproducibility
+1.  Can you define computational reproducibility?
+2.  Can you explain why sharing code and data is not enough for computational reproducibility
 
-## References 
+## References
 
-- Code and data management 
+-   Code and data management
 
-  - ["Code and Data for the Social Sciences: A Practitioner's Guide"](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf) by Matthew Gentkow and Jesse M. Shapiro 
-  
-- Project-oriented research
-   
-  - Computational reproducibility 
+    -   ["Code and Data for the Social Sciences: A Practitioner's Guide"](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf) by Matthew Gentkow and Jesse M. Shapiro
 
-    - ["Good Enough Practices in Scientific Computing"](https://GitHub.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) by PLOS
-      
-    - [Project Management with RStudio](https://swcarpentry.GitHub.io/r-novice-gapminder/02-project-intro/) by Software Carpentry
-      
-    - [Initial steps toward reproducible research](https://kbroman.org/steps2rr/) by Karl Broman
-      
-  - Version control 
-   
-    - [Version Control with Git](https://swcarpentry.GitHub.io/git-novice/) by Software Carpentry
-   
-    - [The Plain Person’s Guide to Plain Text Social Science](http://plain-text.co/) by Kieran Healy 
+-   Project-oriented research
 
+    -   Computational reproducibility
+
+        -   ["Good Enough Practices in Scientific Computing"](https://GitHub.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) by PLOS
+
+        -   [Project Management with RStudio](https://swcarpentry.GitHub.io/r-novice-gapminder/02-project-intro/) by Software Carpentry
+
+        -   [Initial steps toward reproducible research](https://kbroman.org/steps2rr/) by Karl Broman
+
+    -   Version control
+
+        -   [Version Control with Git](https://swcarpentry.GitHub.io/git-novice/) by Software Carpentry
+
+        -   [The Plain Person's Guide to Plain Text Social Science](http://plain-text.co/) by Kieran Healy
