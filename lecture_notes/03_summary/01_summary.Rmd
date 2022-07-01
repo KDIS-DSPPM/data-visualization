@@ -52,10 +52,6 @@ p + geom_line()
 
 You need grouping when the grouping information you need to tell is not built into the mapped variables (like continent).
 
-```{r}
-gapminder
-```
-
 #### Facetting 
 
 Facetting is to make small multiples. 
