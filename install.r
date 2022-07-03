@@ -7,5 +7,6 @@ install.packages(c("pacman",
                    "ggthemes", # additional themes
                    "ggrepel", # arranging ggplots
                    "patchwork", # arranging ggplots
-                   "gtsummary"
+                   "gtsummary",
+                   "scales"
               	   ))
