@@ -18,7 +18,7 @@ Why R? R is free, easy to learn (thanks to [tidyverse](https://www.tidyverse.org
 
 ## Teaching philosophy 
 
-No fun, no gain (not no pain, no gain). However, taking a challenge is part of being fun. The course intends to get you out of your comfort zone. So, please expect that you need to think and work hard. Simultaneously, we aim to provide you with the best possible safe space and guided assistance. So, please help us help you. When implementing these ideas, I emphasize both framework (theory) and workflow (practice). 
+No fun, no gain (not no pain, no gain). However, taking a challenge is part of having fun. The course intends to get you out of your comfort zone. So, please expect that you need to think and work hard. Simultaneously, we aim to provide you with the best possible safe space and guided assistance. So, please help us help you. When implementing these ideas, I emphasize both framework (theory) and workflow (practice). 
 
 ## Teaching crew 
 
