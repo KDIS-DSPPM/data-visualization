@@ -44,16 +44,16 @@ pacman::p_load(
 
 ## Multiple years
 plot(gapminder$lifeExp)
-
 ## One year 
 plot(subset(gapminder, year == 1997)$lifeExp)
+```
 
+```{r}
 # Histogram 
-
 hist(gapminder$year)
 ```
 
-- Intuitive 
+- Not very intuitive 
 - Not very analytic approach 
 
 ## Tidyverse
@@ -83,7 +83,7 @@ This is what tidy data looks like.
 ```{r}
 library(tidyverse)
 
-table1
+table1 %>%
 ```
 
 **Additional tips**
@@ -149,6 +149,10 @@ No worries about new terms. We're going to learn them by actually plotting.
 ### basic aes (x , y)
 
 ```{r}
+gapminder
+```
+
+```{r}
 p <- ggplot(
   data = gapminder,
   mapping = aes(x = gdpPercap, y = lifeExp)
@@ -203,7 +207,7 @@ midwest %>%
 ```{r}
 midwest %>%
   ggplot(aes(x = area)) +
-  geom_histogram(bins = 10) # only 10 bins.
+  geom_histogram(bins = 30) # only 10 bins.
 ```
 
 ```{r}
@@ -211,8 +215,8 @@ ggplot(
   data = subset(midwest, state %in% c("OH", "IN")),
   mapping = aes(x = percollege, fill = state)
 ) +
-  geom_histogram(alpha = 0.7, bins = 20) +
-  scale_fill_viridis_d()
+  geom_histogram(bins = 20, alpha = 0.7) +
+  scale_fill_viridis_d() 
 ```
 
 #### Density
@@ -252,7 +256,9 @@ p + geom_point() +
 
 p + geom_point() + 
   geom_smooth(method = "lm")
+```
 
+```{r}
 # rug plot
 p + geom_point() +
   geom_rug()
@@ -264,13 +270,12 @@ Discrete comparison
 
 ```{r}
 # Bar plot
-
 gapminder %>%
   group_by(continent) %>%
   summarize(avg_life_exp = mean(lifeExp)) %>%
   ggplot(aes(x = fct_reorder(continent, avg_life_exp), y = avg_life_exp)) +
   geom_col() +
-  coord_flip()
+  coord_flip() 
 ```
 
 Temporal trends
@@ -282,14 +287,18 @@ gapminder %>%
   summarize(avg_life_exp = mean(lifeExp)) %>%
   ggplot(aes(x = year, y = avg_life_exp)) +
   geom_line()
+```
 
+```{r}
 # individual comparison 
 gapminder %>%
   filter(continent == "Asia") %>%
   ggplot(aes(x = year, y = lifeExp, 
              col = country)) +
   geom_line()
+```
 
+```{r}
 # overall trend
 gapminder %>%
   filter(continent == "Asia") %>%
