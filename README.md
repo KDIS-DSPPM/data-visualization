@@ -143,6 +143,7 @@ This class is committed to creating an environment in which everyone can partici
   - [Healy ch.3](https://socviz.co/makeplot.html#makeplot)
   - Garrick Aden-Buie. [A Gentle Guide to the Grammar of Graphics
 with ggplot2](https://pkg.garrickadenbuie.com/gentle-ggplot2/#1)
+  - Wickham, H., 2010. [A layered grammar of graphics](https://byrneslab.net/classes/biol607/readings/wickham_layered-grammar.pdf). Journal of Computational and Graphical Statistics, 19(1), pp.3-28.
   - Leland Wilkinson, [The Grammar of Graphics](https://policyviz.com/podcast/episode-201-leland-wilkinson/). *PolicyViz*
 * Assignment #1 due (writing)
 
