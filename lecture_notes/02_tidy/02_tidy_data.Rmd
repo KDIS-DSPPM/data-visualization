@@ -33,7 +33,8 @@ pacman::p_load(
   ggrepel, # arranging ggplots
   patchwork, # arranging ggplots
   broom, # tidying model outputs
-  gtsummary
+  gtsummary,
+  ggfortify
 )
 ```
 
@@ -217,6 +218,18 @@ ggplot(
 ) +
   geom_histogram(bins = 20, alpha = 0.7) +
   scale_fill_viridis_d() 
+```
+
+- Another example that demonstrates why careful experimentation with the bin could be helpful.
+
+```{r}
+ggplot(data = diamonds, 
+       mapping = aes(x = price)) +
+  geom_histogram() # once again, the default is 30
+
+ggplot(data = diamonds, 
+       mapping = aes(x = price)) +
+  geom_histogram(binwidth = 50)
 ```
 
 #### Density
@@ -411,6 +424,11 @@ ggplot(
 #### Coordinates and scales
 
 ```{r}
+# checking the data distribution is important to evaluate a model 
+
+lm.out <- lm(lifeExp ~ gdpPercap, data = gapminder)
+
+autoplot(lm.out)
 
 p + geom_point() +
   coord_flip() # coord_type

@@ -177,6 +177,7 @@ with ggplot2](https://pkg.garrickadenbuie.com/gentle-ggplot2/#1)
   - lecture notes
   - [Healy ch.7](https://socviz.co/maps.html#maps)
   - [The Opportunity Atlas](https://www.opportunityatlas.org/)
+  - [The Many-Faceted Career of Sarah Williams](https://www.esri.com/about/newsroom/arcuser/the-many-faceted-career-of-sarah-williams/), esri.com, Winter 2017
 
 ### 6th Week 
 
