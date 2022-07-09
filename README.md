@@ -93,6 +93,19 @@ This is a graded class based on the following:
 
 - Final exam (30%)
 
+### Grading rubric 
+
+Note that you have 45 points for free. But you should earn the rest of them.
+
+- A (4.0): 90~
+- A- (3.67): 80~89.9
+- B+ (3.33): 70~79.9
+- B (3.0): 65~69.9
+- B- (2.67): 60~64.9
+- C+ (2.33): 55~59.9
+- C (2.0): 50~54.9 
+- C- (1.67): 45~49.9
+
 ### 1. Assignment
 
 Two assignments ([here](https://github.com/KDIS-DSPPM/data-visualization/blob/main/assignment1.md) and [here](https://github.com/KDIS-DSPPM/data-visualization/blob/main/assignment2.md)) will be assigned throughout the semester. 

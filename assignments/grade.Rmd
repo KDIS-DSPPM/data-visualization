@@ -30,6 +30,11 @@ df <- df %>%
   pivot_longer(c("A1", "A1_alt"),
                names_to = "category",
                values_to = "grade") 
+
+df %>%
+  arrange(KorName) %>%
+  filter(category == "A1_alt") %>%
+  select(KorName, grade, everything())
 ```
 
 ```{r}
