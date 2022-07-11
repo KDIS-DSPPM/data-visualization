@@ -108,7 +108,7 @@ Note that you have 45 points for free. But you should earn the rest of them.
 
 ### Disciplinary measure 
 
-* I don't tolerate cheating. Plagiarism is cheating. Group discussion is encouraged, but assignment submission MUST BE YOUR OWN. If your responses are exactly the same as other students, I assume you are all involved in cheating. If you want to claim innocence, please bring me relevant evidence.  
+* I don't tolerate cheating. Plagiarism is cheating. Group discussion is encouraged, but assignment submission MUST BE YOUR OWN. If your responses are exactly the same as other students, I assume you are all involved in cheating. If you want to claim innocence, please bring me CLEAR and RELEVANT evidence.  
 
 * If it happens once, I will take off EVERY POINT related to that section in the assignment or exam. In this case, I will not use the check, check-, check+ grading system for the assignment. Instead, I will use your score. 
 
