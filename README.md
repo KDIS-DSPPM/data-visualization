@@ -108,7 +108,7 @@ Note that you have 45 points for free. But you should earn the rest of them.
 
 ### Disciplinary measure 
 
-* I don't tolerate cheating. Plagiarism is cheating. Group discussion is encouraged, but assignment submission MUST BE YOUR OWN. If your responses are exactly the same as other students, I assume you are all involved in cheating. If you want to claim innocence, please bring me CLEAR and RELEVANT evidence.  
+* I don't tolerate cheating. Plagiarism is cheating. Group discussion is encouraged, but assignment submission **MUST BE YOUR OWN**. If your responses are exactly the same as other students, I assume you are all involved in cheating. If you want to claim innocence, please bring me CLEAR and RELEVANT evidence.  
 
 * If it happens once, I will take off EVERY POINT related to that section in the assignment or exam. In this case, I will not use the check, check-, check+ grading system for the assignment. Instead, I will use your score. 
 
@@ -118,7 +118,7 @@ Note that you have 45 points for free. But you should earn the rest of them.
 
 Two assignments ([here](https://github.com/KDIS-DSPPM/data-visualization/blob/main/assignment1.md) and [here](https://github.com/KDIS-DSPPM/data-visualization/blob/main/assignment2.md)) will be assigned throughout the semester. 
 
-The assignments provide frequent learning opportunities. Each of these assignments should be fairly short and expected to be finished within 8-10 hours of effort. You are encouraged to work in group, but the work you turn in must be your own. 
+The assignments provide frequent learning opportunities. Each of these assignments should be fairly short and expected to be finished within 8-10 hours of effort. You are encouraged to work in group, but the work you turn in **MUST BE YOUR OWN**. 
 
 Unless otherwise notified, the assignments should be rendered into an HTML output using R markdown (*.rmd) and you should submit both of them via the EKDIS website. In addition, the R markdown files should be reproducible on our end, in the event we want to reproduce your work. I will cover what R markdown is and how to create an HTML output in the first week of the course. 
 
