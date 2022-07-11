@@ -112,7 +112,7 @@ Note that you have 45 points for free. But you should earn the rest of them.
 
 * If it happens once, I will take off EVERY POINT related to that section in the assignment or exam. In this case, I will not use the check, check-, check+ grading system for the assignment. Instead, I will use your score. 
 
-* If it happens more than once, I will bring this matter to the disciplinary board.
+* If it happens more than once, I will bring this matter to the disciplinary board. See [this document](https://www.kdischool.ac.kr/board.es?mid=a10501040000&bid=0010&act=view&list_no=10903) for the reference.
 
 ### 1. Assignment
 
