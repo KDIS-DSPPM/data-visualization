@@ -106,6 +106,14 @@ Note that you have 45 points for free. But you should earn the rest of them.
 - C (2.0): 50~54.9 
 - C- (1.67): 45~49.9
 
+### Disciplinary measure 
+
+* I don't tolerate cheating. Plagiarism is cheating. Group discussion is encouraged, but assignment submission MUST BE YOUR OWN. If your responses are exactly the same as other students, I assume you are all involved in cheating. If you want to claim innocence, please bring me relevant evidence.  
+
+* If it happens once, I will take off EVERY POINT related to that section in the assignment or exam. In this case, I will not use the check, check-, check+ grading system for the assignment. Instead, I will use your score. 
+
+* If it happens more than once, I will bring this matter to the disciplinary board.
+
 ### 1. Assignment
 
 Two assignments ([here](https://github.com/KDIS-DSPPM/data-visualization/blob/main/assignment1.md) and [here](https://github.com/KDIS-DSPPM/data-visualization/blob/main/assignment2.md)) will be assigned throughout the semester. 
