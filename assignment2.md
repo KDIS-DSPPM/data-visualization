@@ -2,7 +2,7 @@
 
 ## Task 
 
-1. Download the COVID-19 data using this R package: https://github.com/covid19datahub/COVID19 
+1. Download the COVID-19 data using this URL: https://storage.covid19datahub.io/level/1.csv.zip
 
 2. Read the FT article on "Covid-19 vaccine tracker: the global race to vaccinate."
 
