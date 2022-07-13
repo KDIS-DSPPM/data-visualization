@@ -2,11 +2,25 @@
 
 ## Task 
 
-1. Download the COVID-19 data using this URL: https://storage.covid19datahub.io/level/1.csv.zip
+1. Install the COVID-19 data package in R: `install.packages("COVID19")`
 
-2. Read the FT article on "Covid-19 vaccine tracker: the global race to vaccinate."
+Documentation is here: https://covid19datahub.io/articles/r.html 
 
-3. *Programming*: Visualize how the vaccination rate varies across countries. [point: 50]
+```r
+# Install packages 
+if(!require(pacman)) install.packages("pacman")
+
+pacman::p_load(tidyverse, tidylog, here, COVID19)
+```
+
+2. Read the FT article on ["Covid-19 vaccine tracker: the global race to vaccinate."](https://ig.ft.com/coronavirus-vaccine-tracker/?areas=gbr&areas=isr&areas=usa&areas=eue&areas=are&areas=chn&areas=chl&cumulative=1&doses=total&populationAdjusted=1)
+
+3. *Programming*: Visualize how the vaccination rate varies at the subnational level (state or even lower) in a particular country of your choice. [point: 50]
+
+```r
+# state level data 
+# df <- covid19(country = c("US"), level = 2) # The US 
+```
 
 4. *Information*: Explain what kind of statistical elements are included in your plot(s). [point: 20]
 
