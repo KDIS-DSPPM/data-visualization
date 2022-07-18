@@ -189,6 +189,8 @@ with ggplot2](https://pkg.garrickadenbuie.com/gentle-ggplot2/#1)
   - lecture notes
   - [Healy ch.6](https://socviz.co/modeling.html#modeling)
   - Vincent Arel-Bundock (2022), ["modelsummary,"](https://vincentarelbundock.github.io/modelsummary/) R package 
+  - Victor Powell and Lewis Lehe. [Ordinary Least Square Regression](https://setosa.io/ev/ordinary-least-squares-regression/)
+  - Omar Wasow (2022). [Regression by Calculation](http://appliedstats.org/2022/week08_02.html#1)
   - Albert Y. Kim (2022). [Basic Regression](https://moderndive.com/5-regression.html)
   - Coppock (2020), ["Visualize as You Randomize: Design-based Statistical Graphs for Randomized Experiments"](https://alexandercoppock.com/coppock_2020.pdf)  
 * Assignment #2 due (programming)
