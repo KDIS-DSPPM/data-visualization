@@ -177,6 +177,7 @@ with ggplot2](https://pkg.garrickadenbuie.com/gentle-ggplot2/#1)
   - lecture notes
   - [Healy ch.4](https://socviz.co/groupfacettx.html#groupfacettx)
   - [Healy ch.5](https://socviz.co/workgeoms.html#workgeoms)
+  - Claus O. Wilke (2022). [Redundant coding, text annotations](https://wilkelab.org/SDS375/slides/redundant-coding.html#1)
   - Blumenthal et al (2021). [Why Do We Plot Data?](https://hdsr.mitpress.mit.edu/pub/49opxv6v/release/1). *Harvard Data Science Review*
   - Healy and Moody (2014). [Data Visualization in Sociology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4203684/). *Annual Review of Sociology*
   - Berman, R., & Israeli, A. (2022). [The Value of Descriptive Analytics: Evidence from Online Retailers](https://pubsonline.informs.org/doi/10.1287/mksc.2022.1352). *Marketing Science*
