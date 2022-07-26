@@ -105,6 +105,7 @@ Note that you have 45 points for free. But you should earn the rest of them.
 - C+ (2.33): 55~59.9
 - C (2.0): 50~54.9 
 - C- (1.67): 45~49.9
+- F (0): ~45 
 
 ### Disciplinary measure 
 
